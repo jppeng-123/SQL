@@ -4,11 +4,10 @@ import pandas as pd
 from datetime import datetime
 
 
-# 数据库连接配置
-DSN = 'DSN=Trading;UID=sa;PWD=123456'
+DSN = 'DSN,UID,PWD'
 
 def create_table_if_not_exists():
-    """创建目标表（如果不存在）"""
+    """create new table"""
     conn = pyodbc.connect(DSN)
     cursor = conn.cursor()
     create_sql = """
@@ -42,7 +41,7 @@ def create_table_if_not_exists():
     conn.close()
 
 def process_and_insert_data():
-    """处理并插入2009-2025年数据"""
+    """insert 2009-2025 data"""
     # 生成所有需要查询的日期（每年0630和1231）
     query_dates = [f"{year}{month}" for year in range(2009, 2026) for month in ['0630', '1231']]
     
@@ -185,8 +184,3 @@ def process_and_insert_data():
 if __name__ == "__main__":
     create_table_if_not_exists()
     process_and_insert_data()
-
-
-import akshare as ak
-test1 = ak.stock_fhps_em('20241231')
-print(test1)
