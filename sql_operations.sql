@@ -1,7 +1,4 @@
---Jinjia Peng SQL FIM 590 Fall HW 1 & 2
-
-
--- Assignment 1 
+--SQL Operations
 
 
 -- SELECT THE TOP 10 rows from the Artist table
@@ -98,9 +95,6 @@ limit 1;
 
 
 
-
-
--- Assignment 2
 
 
 
@@ -504,4 +498,5 @@ Smallest AS (
 )
 SELECT * FROM Largest
 UNION ALL
+
 SELECT * FROM Smallest;
