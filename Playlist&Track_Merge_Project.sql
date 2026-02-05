@@ -221,6 +221,19 @@ order by
 
 
 
+
+
+
+
+
+
+
+
+
+--Portfolio Management
+
+
+
 --* Creating the important tables
 
 
@@ -236,20 +249,7 @@ from closeprices cp
 									and cp.ticker = cp_prev.ticker
 where cp.ticker = 'AAPL' and cp.closedate = '2023-12-14'
 
-
-
-
-
-
-
-
-
-
---Portfolio Management
-
-
-
-
+	
 -------------------------------------------------------------------------------------------------------------------
 --avg price calculation
 
@@ -447,5 +447,6 @@ from pl pl1
 
 group by pl1.CloseDate
 order by pl1.CloseDate	
+
 
 
