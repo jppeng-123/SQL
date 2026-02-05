@@ -1,4 +1,4 @@
--- playlist&track_merge
+-- playlist&track_merge project
 
 -- on playlist 8, which artist as the most tracks?
 select a2.Name, a.title 
@@ -217,6 +217,7 @@ group by
     em.firstname
 order by 
     avg_invoice_per_customer desc; -- most purchases per customer
+
 
 
 
