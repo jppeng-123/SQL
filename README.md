@@ -1,4 +1,4 @@
-# 🗄️ Quant Data Engineering Lab
+# 🗄️ SQL Quant Data Engineering Lab
 
 SQL Server–based research database and analytics pipeline  
 for systematic trading and quantitative analysis.
@@ -6,6 +6,7 @@ for systematic trading and quantitative analysis.
 This project builds the data backbone behind all strategies:
 clean data → structured storage → fast queries → reproducible research.
 
+Software & Server: , DBeaver, Python (PYODBC) & SQL Server 2014
 ---
 
 ## ⚙️ What’s inside
