@@ -16,11 +16,11 @@ df_list = []
 for cn_name, en_code in index_map.items():
     df = ak.stock_market_pb_lg(symbol=cn_name)
     df.columns = [
-        'trade_date',         # 日期
-        'index_value',        # 指数
-        'pb',                 # 市净率
-        'pb_weighted',        # 等权市净率
-        'pb_median'           # 市净率中位数
+        'trade_date',         
+        'index_value',        
+        'pb',                 
+        'pb_weighted',        
+        'pb_median'           
     ]
     df['market'] = en_code
     df_list.append(df)
@@ -30,7 +30,7 @@ df_all = pd.concat(df_list, ignore_index=True)
 df_all['trade_date'] = pd.to_datetime(df_all['trade_date'])
 
 # Step 3: Connect to SQL Server
-conn = pyodbc.connect('DSN=Trading;UID=sa;PWD=123456')
+conn = pyodbc.connect('DSN,UID,PWD')
 cursor = conn.cursor()
 
 # Step 4: Create the market_index table
@@ -80,3 +80,4 @@ print(f"✅ Inserted {len(data)} rows into [market_index].")
 # Step 6: Cleanup
 cursor.close()
 conn.close()
+
