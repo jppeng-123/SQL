@@ -5,11 +5,10 @@ import time
 from datetime import datetime
 from tenacity import retry, stop_after_attempt, wait_fixed
 
-# ====================== 配置区 ======================
-conn_str        = 'DSN=Trading;UID=sa;PWD=123456'
+conn_str        = 'DSN,UID,PWD'
 valuation_table = "stock_valuation"
-batch_size      = 1000   # 批量插入的批次大小
-sleep_interval  = 0.1    # 每插入完一只股票后暂停的秒数
+batch_size      = 1000   
+sleep_interval  = 0.1   
 
 sse_prefixes  = {"600", "601", "603", "605", "688", "689"}
 szse_prefixes = {"000", "001", "002", "003", "300", "301"}
@@ -181,3 +180,4 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 if __name__ == "__main__":
     main()
+
