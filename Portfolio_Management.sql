@@ -1,8 +1,4 @@
-
-
 --Portfolio Management
-
-
 
 --* Creating the important tables
 
