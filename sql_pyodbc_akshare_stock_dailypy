@@ -7,9 +7,9 @@ from tenacity import retry, stop_after_attempt, wait_fixed
 from json import JSONDecodeError
 
 # ====================== 配置区 ======================
-conn_str   = 'DSN=Trading;UID=sa;PWD=123456'  # ODBC DSN
-table_name = "stock_a_daily"                  # 目标表
-start_date = "2010-01-01"                     # 数据起始日期
+conn_str   = 'DSN,UID,PWD'  
+table_name = "stock_a_daily"                  
+start_date = "2010-01-01"                     
 
 # ====================== 重试函数定义 ======================
 # 遇到网络抖动或连接重置时，最多重试 3 次，每次间隔 1 秒
@@ -119,3 +119,4 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 
 if __name__ == "__main__":
     main()
+
